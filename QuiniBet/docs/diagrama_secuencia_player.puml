@@ -1,0 +1,8 @@
+@startuml Diagrama de secuancia
+
+actor Player
+Player -> PlayerRegister: Registrar Player
+PlayerRegister -> PlayerService: Servicios Player 
+
+
+@enduml

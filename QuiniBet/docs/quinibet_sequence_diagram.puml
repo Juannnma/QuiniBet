@@ -1,0 +1,19 @@
+@startuml Quinibet Sequence Diagram
+actor User #MediumVioletRed
+participant UserResource #lightblue
+participant UserService #blueviolet
+participant UserRepository #LimeGreen
+database DB #GreenYellow
+User-> UserResource: Authentication Request
+UserResource -> UserResource: Data Validation 
+UserResource -> User: Asking for action
+User -> UserResource: Inscription Request
+UserResource -> UserService: Asking for avilable places
+UserService --> UserResource : Aviable Places
+UserResource -> UserService: Buy request
+UserService --> UserResource : Buy
+UserResource -> User: Buy confirmed
+UserResource -> UserService: Persistance Request
+UserService -> UserRepository: Persist buy data in DB
+UserRepository -> DB: Save Buy Data
+@enduml

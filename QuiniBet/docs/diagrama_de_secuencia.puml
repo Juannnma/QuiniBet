@@ -1,0 +1,29 @@
+@startuml diagrama_de_secuencia
+
+class Player {
+    - name
+    - surname
+    - DNI
+    - email
+    - password
+}
+
+class BingoCard {
+    - code_card
+    - numbers
+    - date_issue
+    - time_issue
+}
+
+class Raffle {
+    - card_win
+    - winners
+    - date
+    - time
+    - prize
+}
+
+Player "many" --* "1" Raffle: participate
+BingoCard "many" --o "1" Player: buy
+
+@enduml

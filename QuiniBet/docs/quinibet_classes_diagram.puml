@@ -1,0 +1,28 @@
+@startuml
+
+class User {
+    - name
+    - surname
+    - email
+    - password
+}
+
+class Card {
+    - numbers
+    - date
+    - time
+}
+
+class Raffle {
+    - card_win
+    - winners
+    - date
+    - time
+    - prize
+}
+
+
+User "many" --* "1" Raffle: participate
+Card "many" --o "1" User: buy
+
+@enduml
